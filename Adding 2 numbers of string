@@ -12,17 +12,11 @@ public:
            sum+=(num1[i--]-'0');
            if(j>=0)
            sum+=(num2[j--]-'0');
-           cout<<sum<<endl;
-
            sum+=carry;
-           cout<<sum<<endl;
            carry=sum/10;
-           cout<<carry<<endl;
            sum=sum%10;
-           cout<<sum<<endl;
-
-           res=res+to_string(sum);
-           cout<<res<<endl;
+            res=res+to_string(sum);
+          
        }
            reverse(res.begin(),res.end());
        
