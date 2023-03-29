@@ -1,0 +1,32 @@
+class Solution{
+public:
+    string rremove(string s){
+        string temp="",res=s;
+        while(temp.size()!=res.size())
+        {
+            temp=res;
+            res=solve(res);
+        }
+        return res;
+        
+    }
+};
+
+string solve(string s)
+{
+    int n=s.size();
+    string ans;
+    for(int i=0;i<n;i++)
+    {
+        if(i<n-1 && s[i]==s[i+1])
+        {
+            while(i<n-1 && s[i]==s[i+1])
+            i++;
+        }
+        else
+        ans+=s[i];
+        
+        
+    }
+    return ans;
+}
