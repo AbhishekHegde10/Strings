@@ -1,0 +1,27 @@
+class Solution
+{
+    public:
+    //Function to reverse words in a given string.
+    string reverseWords(string s) 
+    { 
+        string res="",helper="";
+        reverse(s.begin(),s.end());
+        for(int i=0;i<s.size();i++)
+        {
+            if(s[i]=='.')
+            {
+                reverse(helper.begin(),helper.end());
+                helper+=".";
+                res+=helper;
+                helper="";
+            }
+            else
+            helper+=s[i];
+        }
+        reverse(helper.begin(),helper.end());
+        res+=helper;
+        return res;
+            }
+        
+        
+};
